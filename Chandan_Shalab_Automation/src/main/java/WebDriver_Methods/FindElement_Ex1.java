@@ -11,7 +11,7 @@ public class FindElement_Ex1 {
 	public static void main(String[] args) throws InterruptedException
 	{
 		//Specify type of browser and path of dricer
-		System.setProperty("webdriver.chrome.driver", "/Users/girishg/eclipse-workspace/Chandan_Shalab_Automation/Browser_Drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Users/girishg/git/Chandan_Shalab_Automation/Chandan_Shalab_Automation/Browser_Drivers/chromedriver");
 	
 		//Launching Empty Browser
 		WebDriver driver = new ChromeDriver();
@@ -19,7 +19,19 @@ public class FindElement_Ex1 {
 		//Navigating to Test Url
 		driver.get("https://softwaretestingexperts.com/");
 		
+		Thread.sleep(1000);
+
+		
+		//click action
 		driver.findElement(By.xpath("//*[@id=\"app\"]/main/header/div[2]/nav/ul/li[3]/div/a")).click();
+		
+		Thread.sleep(2000);
+		
+		//sendkeys action - which will send the data
+		driver.findElement(By.xpath("//*[@id=\"00pDBnuK54kQ-0KB2lwgy\"]/div[2]/div/form/div[1]/div[1]/div/input")).sendKeys("Girish");
+				
+		Thread.sleep(2000);
+		driver.quit();
 			
 	}
 }
