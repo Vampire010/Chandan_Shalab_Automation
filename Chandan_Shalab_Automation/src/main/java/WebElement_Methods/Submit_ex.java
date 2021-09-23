@@ -1,10 +1,10 @@
-package Locaters_ex1;
+package WebElement_Methods;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class All_Locaters_ex 
+public class Submit_ex 
 {
 
 	public static void main(String[] args) throws InterruptedException
