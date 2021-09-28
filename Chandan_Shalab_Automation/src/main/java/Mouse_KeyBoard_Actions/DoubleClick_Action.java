@@ -1,13 +1,14 @@
-package SynChronization;
-
-import java.util.concurrent.TimeUnit;
+package Mouse_KeyBoard_Actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Impicit_wait_Ex {
+public class DoubleClick_Action {
 
 	public static void main(String[] args) throws InterruptedException 
 	{
@@ -18,19 +19,20 @@ public class Impicit_wait_Ex {
 				WebDriver driver = new ChromeDriver();
 
 				//Navigating to Test Url
-				driver.get("https://www.google.com/");
+				driver.get("file:///Users/girishg/git/Chandan_Shalab_Automation/Chandan_Shalab_Automation/src/main/java/WebPages/DoubleClick.html");
 				
 				Thread.sleep(1000);
-				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-				WebElement Search_Box = driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input"));
-				Search_Box.sendKeys("Girish");
+				
 
 
-				WebElement Search_Icon = driver.findElement(By.xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[1]/div/span/svg"));
-		    	
-				Search_Icon.click();
-				driver.quit();
+				WebElement Dbl_Click = driver.findElement(By.xpath("/html/body/p[1]"));
+				
+				//Dbl_Click.click();
+				Actions act = new Actions(driver);
+				
+				act.doubleClick(Dbl_Click).perform();
+				
+				
 	}
 
 }
